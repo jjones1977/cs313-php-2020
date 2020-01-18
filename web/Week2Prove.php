@@ -12,12 +12,12 @@
         </div>
         <div class="column">
             <div id="div8">
-                <img src="NaPaliRainbow.jpg" alt="Na Pali with Rainbow" width="300" height=auto>
+                <img src="NaPaliRainbow.JPG" alt="Na Pali with Rainbow" width="300" height=auto>
             </div>
         </div>
         <div class="column">
             <div id="div2">
-                <img src="ZFRView.jpg" alt="Zack, Finn, Russ" width="144" height=auto>
+                <img src="ZFRView.JPG" alt="Zack, Finn, Russ" width="144" height=auto>
             </div>
             <div id="div5">
                 <img src="Bracken.jpeg" alt="Bracken" width="144" height=auto>
@@ -25,7 +25,7 @@
         </div>
         <div class="column">
             <div id="div4">
-                <img src="FinnKayak.jpg" alt="Finn Kayak" width="168" height=auto></div>
+                <img src="FinnKayak.JPG" alt="Finn Kayak" width="168" height=auto></div>
         </div>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
                 <img src="Tier.jpeg" alt="Tier" width="350" height="150">
             </div>
             <div id="div7">
-                <img src="Family.jpg" alt="Family Picture" width="350" height=auto>
+                <img src="Family.JPG" alt="Family Picture" width="350" height=auto>
             </div>
         </div>
         <div class="column">
@@ -43,7 +43,7 @@
             </div>
             <div id="div9"><h2>2020</h2></div>
             <div id="div10">
-                <img src="ZipLine.jpg" alt="Zip Line" width="150" height="118">
+                <img src="ZipLine.JPG" alt="Zip Line" width="150" height="118">
             </div>
         </div>
         <div class="column">
