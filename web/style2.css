@@ -1,0 +1,258 @@
+.div1 {
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: Helvetica, Arial;
+    font-size: 60pt;
+}
+
+        
+.div2 {
+    margin-top: 100px;
+    margin-left: 125px;
+}
+
+.div3 {
+ 	width: 100px;
+	height: 100px;
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+    
+    font-family: Helvetica, Arial;
+    font-size: 20pt;
+}
+
+.div4 {
+    font-family: Helvetica, Arial;
+    font-size: 30pt;
+    flex-wrap: wrap;
+    float: right;
+}
+
+.p2 {
+    font-family: Helvetica, Arial;
+    font-size: 30pt;
+}
+
+.p3 {
+    font-family: Helvetica, Arial;
+    font-size: 20pt;
+}
+
+.p4 {
+    font-family: Helvetica, Arial;
+    font-size: 25pt;
+}
+
+#btn1 {
+    padding: 15pt;
+    margin: 10pt;
+    color: chocolate;
+    background-color: chocolate;
+    font-size: 20pt; 
+    flex-wrap: wrap;
+}
+
+.btnLink2 {
+    font-family: helvetica, arial; 
+    font-size: 20pt;
+    background-color: chocolate;
+    color: white;
+    float: right;
+    padding-right: 10pt;
+    padding-left: 10pt;           
+}
+
+
+            img {
+                border-radius: 50%;
+                width: 125px;
+                height: auto;
+            }
+            
+    
+            
+            
+    
+            
+            .div4 {
+                flex-wrap: wrap;
+                padding-top: 10pt;
+            }
+            
+            .div5 {
+                float: left;
+            
+            }
+            
+            .div6 {
+                flex-wrap: nowrap;
+                padding-top: 75pt;
+                float: right;
+            }
+            
+            .div7 {
+                float: right;
+                flex-wrap: nowrap;
+            }
+
+            .div8 {
+                flex-wrap: wrap;
+                float: right;
+                margin-right: 150px;
+                font-family: Helvetica, Arial;
+                font-size: 20pt;
+            }
+            
+     
+            .divRow {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top; 0px;
+            }
+            
+            h1 {
+                font-family: fantasy, cursive;
+                font-size: 50pt;
+                text-align: center;
+            }
+            
+            h2 {
+                font-family: fantasy, cursive;
+                font-size: 20pt;
+                
+            }
+            
+            h3 {
+                font-family: fantasy, cursive;
+                font-size: 30pt;
+                padding-top: 25pt;
+                margin-bottom: 0pt;
+                
+            }
+            
+            h4 {
+                font-family: fantasy, cursive;
+                font-size: 20pt;
+                padding-top: 25pt;
+                margin-bottom: 0pt;
+                
+            }
+                    
+            h5 {
+                font-family: fantasy, cursive;
+                font-size: 30pt;
+                margin-bottom: 0pt;
+                
+            }
+
+            .test {
+    
+                font-family: fantasy;
+                font-size: 30pt;
+            }
+                    
+                    
+            
+            body {
+                background-color: blanchedalmond;
+            }
+            
+            .btnLink {
+                font-family: helvetica, arial; 
+                font-size: 20pt;
+               
+                color: coral;
+            }
+            
+           .btnLink2 {
+                font-family: helvetica, arial; 
+                font-size: 20pt;
+                background-color: coral;
+                color: white;
+                float: right;
+                padding-right: 10pt;
+                padding-left: 10pt;
+            
+            }
+            
+            .btnLink3 {
+                font-family: helvetica, arial; 
+                font-size: 20pt;
+                background-color: chocolate;
+                color: white;
+                float: right;
+                padding-right: 10pt;
+                padding-left: 10pt;
+                border-radius: 20%;
+            }
+            
+            .btnLink4 {
+                font-family: helvetica, arial; 
+                font-size: 15pt;
+                color: coral;
+                float: right;
+            }
+            
+            
+            .chLabel {
+                font-family: Helvetica, Arial;
+                font-size: 20pt;
+            }
+            
+            .addressLabel {
+                font-family: Helvetica, Arial;
+                font-size: 15pt;
+            }
+            
+            .p1 {
+                font-family: Helvetica, Arial;
+                font-size: 20pt;
+                margin-top: 0pt;
+            }
+            
+            .p2 {
+                font-family: Helvetica, Arial;
+                font-size: 30pt;
+                margin-top: 10pt;
+                
+            }
+            
+            .p3 {
+                font-family: Helvetica, Arial;
+                font-size: 20pt;
+                padding-top: 45pt;
+                padding-left: 175pt;
+                float: right;
+            }
+            
+            .p4 {
+                font-family: Helvetica, Arial;
+                font-size: 15pt;
+            }
+            
+            .p5 {
+                font-family: Helvetica, Arial;
+                font-size: 20pt;
+            }
+            
+            .btnSubmit {
+                font-size: 20pt;
+                background-color: coral;
+                color: white;
+                float: right;
+            }
+            
+            .btnSubmit2 {
+                font-size: 20pt;
+                background-color: coral;
+                color: white;
+                float: left;
+                padding-right: 10pt;
+                padding-left: 10pt;
+            }
