@@ -1,3 +1,7 @@
+body {
+    background-color: blanchedalmond;
+}
+
 .div1 {
     margin-left: 50px;
     margin-top: 50px;
@@ -12,8 +16,6 @@
 }
 
 .div3 {
- 	width: 100px;
-	height: 100px;
 	
 	position: absolute;
 	top:0;
@@ -24,15 +26,37 @@
 	margin: auto;
     
     font-family: Helvetica, Arial;
-    font-size: 20pt;
+    font-size: 30pt;
 }
 
 .div4 {
     font-family: Helvetica, Arial;
-    font-size: 30pt;
-    flex-wrap: wrap;
-    float: right;
+    text-align: center;
+    padding-top: 50pt;
 }
+
+.div5 {
+    float: right;
+    flex-wrap: wrap;
+}
+
+.div7 {
+    text-align: center;
+}
+
+.div8 {
+    display: inline-block;
+}
+
+p1 {
+    color: red;
+    }
+
+p2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+
 
 .p2 {
     font-family: Helvetica, Arial;
@@ -68,191 +92,158 @@
     padding-left: 10pt;           
 }
 
+ .btnLink4 {
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    width: 120pt; 
+          
+}
 
-            img {
-                border-radius: 50%;
-                width: 125px;
-                height: auto;
-            }
-            
-    
-            
-            
-    
-            
-            .div4 {
-                flex-wrap: wrap;
-                padding-top: 10pt;
-            }
-            
-            .div5 {
-                float: left;
-            
-            }
-            
-            .div6 {
-                flex-wrap: nowrap;
-                padding-top: 75pt;
-                float: right;
-            }
-            
-            .div7 {
-                float: right;
-                flex-wrap: nowrap;
-            }
+.btnLink3 {
+    font-family: helvetica, arial; 
+    font-size: 30pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    width: 100pt; 
+    margin-left: 380pt;
+          
+}
 
-            .div8 {
-                flex-wrap: wrap;
-                float: right;
-                margin-right: 150px;
-                font-family: Helvetica, Arial;
-                font-size: 20pt;
-            }
+.btnLink5 {
             
-     
-            .divRow {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top; 0px;
-            }
-            
-            h1 {
-                font-family: fantasy, cursive;
-                font-size: 50pt;
-                text-align: center;
-            }
-            
-            h2 {
-                font-family: fantasy, cursive;
-                font-size: 20pt;
-                
-            }
-            
-            h3 {
-                font-family: fantasy, cursive;
-                font-size: 30pt;
-                padding-top: 25pt;
-                margin-bottom: 0pt;
-                
-            }
-            
-            h4 {
-                font-family: fantasy, cursive;
-                font-size: 20pt;
-                padding-top: 25pt;
-                margin-bottom: 0pt;
-                
-            }
-                    
-            h5 {
-                font-family: fantasy, cursive;
-                font-size: 30pt;
-                margin-bottom: 0pt;
-                
-            }
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    padding-right: 10pt;
+    padding-left: 10pt;
+    margin-left: 329pt;
+}
 
-            .test {
+.btnLink6 {
+            
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    padding-right: 10pt;
+    padding-left: 10pt;
+    margin-left: 160pt;
+}
+
+.imgLogo {
+    border-radius: 50%;
+    width: 125px;
+    height: auto;
+}
+
+.hLogo {
+    font-family: fantasy, cursive;
+    font-size: 200pt;
+   }
+
+h2 {
+    font-family: fantasy, cursive;
+    font-size: 50pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;    
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;    
+    }
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;   
+    margin-bottom: 10pt;
+}
+        
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+
+.input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+        
+.input1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 111pt;
+}
+        
+.input2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 360pt;
+}
+
+.input3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    margin-left: 3pt;
+}
+
+.input4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 211pt;
+}
+           
+.input5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 208pt;
+}
+           
+.input6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 196pt;
+}
+
+.column {
+    float: left;
+   
+    padding: 5px;
+}
+        
+.column2 {
+    float: right;
     
-                font-family: fantasy;
-                font-size: 30pt;
-            }
-                    
-                    
-            
-            body {
-                background-color: blanchedalmond;
-            }
-            
-            .btnLink {
-                font-family: helvetica, arial; 
-                font-size: 20pt;
-               
-                color: coral;
-            }
-            
-           .btnLink2 {
-                font-family: helvetica, arial; 
-                font-size: 20pt;
-                background-color: coral;
-                color: white;
-                float: right;
-                padding-right: 10pt;
-                padding-left: 10pt;
-            
-            }
-            
-            .btnLink3 {
-                font-family: helvetica, arial; 
-                font-size: 20pt;
-                background-color: chocolate;
-                color: white;
-                float: right;
-                padding-right: 10pt;
-                padding-left: 10pt;
-                border-radius: 20%;
-            }
-            
-            .btnLink4 {
-                font-family: helvetica, arial; 
-                font-size: 15pt;
-                color: coral;
-                float: right;
-            }
-            
-            
-            .chLabel {
-                font-family: Helvetica, Arial;
-                font-size: 20pt;
-            }
-            
-            .addressLabel {
-                font-family: Helvetica, Arial;
-                font-size: 15pt;
-            }
-            
-            .p1 {
-                font-family: Helvetica, Arial;
-                font-size: 20pt;
-                margin-top: 0pt;
-            }
-            
-            .p2 {
-                font-family: Helvetica, Arial;
-                font-size: 30pt;
-                margin-top: 10pt;
-                
-            }
-            
-            .p3 {
-                font-family: Helvetica, Arial;
-                font-size: 20pt;
-                padding-top: 45pt;
-                padding-left: 175pt;
-                float: right;
-            }
-            
-            .p4 {
-                font-family: Helvetica, Arial;
-                font-size: 15pt;
-            }
-            
-            .p5 {
-                font-family: Helvetica, Arial;
-                font-size: 20pt;
-            }
-            
-            .btnSubmit {
-                font-size: 20pt;
-                background-color: coral;
-                color: white;
-                float: right;
-            }
-            
-            .btnSubmit2 {
-                font-size: 20pt;
-                background-color: coral;
-                color: white;
-                float: left;
-                padding-right: 10pt;
-                padding-left: 10pt;
-            }
+    padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.p4 {
+    
+}
+.p3 {
+    font-family: fantasy, cursive;
+    font-size: 100pt;
+    float: right;
+    }
+
+.errorMsg {
+    visibility: collapse;
+}
