@@ -1,319 +1,258 @@
 <?php
-// Start the session
-session_start();
+    require("DBCon.php");
+    session_start();
 ?>
 
 <html>
     
 <head>
-    <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" href="style2.css">    
-    
-<style>
-.div1 {
-    margin-left: 50px;
-    margin-top: 50px;
-    font-family: Helvetica, Arial;
-    font-size: 60pt;
-}
-
-        
-.div2 {
-    margin-top: 100px;
-    margin-left: 125px;
-}
-
-.div3 {
-	
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
-    
-    font-family: Helvetica, Arial;
-    font-size: 30pt;
-}
-
-.div4 {
-    font-family: Helvetica, Arial;
-    font-size: 20pt;
-    float: center;
-    text-align: center;
-}
-
-.p2 {
-    font-family: Helvetica, Arial;
-    font-size: 30pt;
-}
-
-.p3 {
-    font-family: Helvetica, Arial;
-    font-size: 20pt;
-}
-
-.p4 {
-    font-family: Helvetica, Arial;
-    font-size: 25pt;
-}
-
-#btn1 {
-    padding: 15pt;
-    margin: 10pt;
-    color: chocolate;
-    background-color: chocolate;
-    font-size: 20pt; 
-    flex-wrap: wrap;
-}
-
-.btnLink2 {
-    font-family: helvetica, arial; 
-    font-size: 20pt;
-    background-color: chocolate;
-    color: white;
-    float: right;
-    padding-right: 10pt;
-    padding-left: 10pt;           
-}
-
-.imgLogo {
-    border-radius: 50%;
-    width: 20px;
-    height: auto;
-}
-
-.hLogo {
-    font-family: fantasy, cursive;
-    font-size: 200pt;
-   }
-
-h2 {
-    font-family: fantasy, cursive;
-    font-size: 50pt;
-    margin-top: 10px;
-    margin-bottom: 10px;
-   }
-
-.column {
-    float: left;
-  padding: 5px;
-}
-
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.p3 {
-    font-family: fantasy, cursive;
-    font-size: 100pt;
-    float: right;
-    }
-    
-    .p4 {
-        color=red;
-    }
-
-input[type=text] {
-  width: 140pt;
-  padding: 10px 10px;
-  box-sizing: border-box;
-}
-    
-.btn2 {
-    padding: 5pt;
-    margin-top: 10pt;
-    color: white;
-    background-color: chocolate;
-    font-size: 20pt;
-}
-    
-</style>
-    
-    
-<script>
-
-    validatePassword(){
-        var password1 = document.getElementById("textAddPassword").innerHTML;
-        var password2 = document.getElementById("textAddPasswordAgain").innerHTML;
-        alert("Passwords do not match.");
-        if(!(password1 == password2)) {
-            alert("Passwords do not match.");
-            document.getElementById("AddUserSubmit").disabled = true;
-        }
-        if(password1 == password2){
-            document.getElementById("AddUserSubmit").disabled = false;
-        }
-        
-        validatePassword2(){
-            document.getElementById("test3").innerHTML = "test";
-        }
-        
-        function test() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    }
-        
-    }
-    
-</script>
-    
+    <title>Add a user</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">  
 </head>
-    
 <body>
-<?php   
-try
-{
-  $user = 'ydnqgenybblmcs';
-  $password = '1fddb6c8034d2361a90e2535b8226b9d3931b3d343d26320190ae2e90fcc863f';
-  $db = new PDO('pgsql:host=ec2-52-71-122-102.compute-1.amazonaws.com;dbname=dbb5pi03k8rheg', $user, $password);
-
-  // this line makes PDO give us an exception when there are problems,
-  // and can be very helpful in debugging! (But you would likely want
-  // to disable it for production environments.)
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    <div>
+    <div class="row">
+        <div class="column">
+            <img class="imgLogo" src="bank.JPEG" alt="Logo">
+        </div>
+        <div class="column">
+            <h2>Bankon</h2>
+        </div>
+        <div class="column2">
+            <a href="piggyBankAppWelcome.php"><p class="btnLink2">Back to Home</p></a>
+        </div>
+    </div>
+        <hr>
+    </div>
     
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+    <?php
+        // define variables and set to empty values
+        $username = $password = $password2 = $displayname = "";
     
-?>
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $test = true;  
+        }
+        else {
+            $test = false;
+        }
     
-    <form method="post">
-        <label for="addSurname">Family Name: </label> 
-        <input type="text" name="addSurname" id="textAddSurname"><br><br>
-        <p>Please enter login information: </p>
-        <label for="addUsername">Username: </label> 
-        <input type="text" name="addUsername" id="textAddUsername"><br>
-        <label for="addPassword">Password: </label>
-        <input type="text" name="addPassword" id="textAddPassword"><br>
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_POST["addUsername"])){
+                $test = false;
+                echo "<p1>Please enter a username.</p1>";
+                echo "<br>";
+            }
+            else {
+                $username = htmlspecialchars($_POST["addUsername"]);
+                $_SESSION["username"] = $username;
+            }  
+        }
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_POST["addPassword"])){
+                $test = false;
+                echo "<p1>Please enter a password.</p1>";
+                echo "<br>";
+            }
+            else {
+                $password = htmlspecialchars($_POST["addPassword"]);
+                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                $_SESSION["password"] = $password;
+            }  
+        }
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_POST["addPassword2"])){
+                $test = false;
+                echo "<p1>Please retype the password.</p1>";
+                echo "<br>";
+            }
+            else {
+                $password2 = htmlspecialchars($_POST["addPassword2"]); 
+                
+                if($password != $password2){
+                    echo "<p1>Passwords did not match. Please re-enter the information.</p1>";
+                    echo "<br>";
+                    $test = false;
+                }
+            }  
+        }
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_POST["addDisplayName"])){
+                $test = false;
+                echo "<p1>Please enter a given name.</p1>";
+                echo "<br>";
+            }
+            else {
+                $displayname = htmlspecialchars($_POST["addDisplayName"]);   
+            }  
+        }
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_POST["addSurname"])){
+                $test = false;
+                echo "<p1>Please enter a family username.</p1>";
+                echo "<br>";
+            }
+            else {
+                $surname = htmlspecialchars($_POST["addSurname"]);  
+                
+                //pull id from pb_family table OR create new entry
+                //in pb_family table.
+                try
+                {
+                    //Need to check if there is already a family username 
+                    $query = 'SELECT surname, id FROM pb_family WHERE surname=:surname';
         
-        <input type="submit" class="btn2" id="AddUserSubmit" value="Create User">
-    </form>
+                    $statement = $db->prepare($query);
+
+                    // Now we bind the values to the placeholders. 
+	                $statement->bindValue(':surname', $surname);
+
+	                $statement->execute();
+            
+                    $row = $statement->fetch(PDO::FETCH_ASSOC);
     
-<?php
-        $surname = htmlspecialchars($_POST["addSurname"]);
-        $username = htmlspecialchars($_POST["addUsername"]);
-        $password = htmlspecialchars($_POST["addPassword"]);
-    
-    try
-{
-	// Add the Scripture
+                    $famID = $row['id'];
+                    $_SESSION["famID"] = $famID;
+                    
+                    if(empty($famID)){
+                        //If there is no family id already, make one
+                        // Preparing the query to enter the account into the user db
+	                   $query = 'INSERT INTO pb_family(surname) VALUES(:surname)';
+                        
+	                   $statement = $db->prepare($query);
 
-	// We do this by preparing the query with placeholder values
-	$query = 'INSERT INTO pb_family(surname, password, username) VALUES(:surname, :password, :username)';
-	$statement = $db->prepare($query);
+                       // Now we bind the values to the placeholders. 
+	                   $statement->bindValue(':surname', $surname);	       
 
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
-	$statement->bindValue(':surname', $surname);
-	$statement->bindValue(':password', $password);
-	$statement->bindValue(':username', $username);
-
-	$statement->execute();
-    $query2 = 'SELECT id FROM pb_family WHERE pb_family.surname = :surname';
-	$statement2 = $db->prepare($query2);
-  
-    $statement2->bindValue(':surname', $surname);
+	                   $statement->execute();
+                        
+                        //Now get family id for use later
+                        $query = 'SELECT surname, id FROM pb_family WHERE surname=:surname';
         
-    $statement2->execute();
+                        $statement = $db->prepare($query);
+
+                        // Now we bind the values to the placeholders. 
+	                    $statement->bindValue(':surname', $surname);
+
+	                    $statement->execute();
+            
+                        $row = $statement->fetch(PDO::FETCH_ASSOC);
     
+                        $famID = $row['id'];
+                        $_SESSION["famID"] = $famID;
+            
+                    }    
+                    
+                }
+                    catch (Exception $ex)
+                {
+	            // Please be aware that you don't want to output the Exception message in
+	            // a production environment
+	               echo "Error with DB. Details: $ex";
+	               die();
+                }
+                
+            }
     
-    while ($row2 = $statement2->fetch(PDO::FETCH_ASSOC))
-    {
-        $idFamily = $row2['id'];
-      
-    }   
-}
-catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}
-   
-?>
-    
-        <br>
-        <br>
-    <form method="post">
-        <p>Add your children one at a time.</p>
-        <label for="childFN">First Name: </label> 
-        <input type="text" name="childFN"><br>
-        <label for="childLN">Last Name: </label> 
-        <input type="text" name="childLN"><br>
-        <label for="childAge">Age: </label> 
-        <input type="text" name="childAge"><br>
-        <label for="childNotes">Notes: </label> 
-        <input type="text" name="childNotes"><br>
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST["childBox"])){
+                $adult = 'f';
+               
+                //check to see if entry in pb_children. If not, make one
+                $query = 'SELECT family_id, first_name, id FROM pb_children WHERE family_id=:famID AND first_name=:fName';
          
-        
-        <input type="submit" class="btn2" id="AddUserSubmit" value="Add Child">
-    </form>
+                $statement = $db->prepare($query);
 
+                // Now we bind the values to the placeholders. 
+	            $statement->bindValue(':famID', $famID);
+                $statement->bindValue(':fName', $displayname);
+
+	            $statement->execute();  
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+    
+                $childID = $row['id'];
+                
+                if(empty($childID)){
+                    //if no entry in pb_children exists, make one.
+                    $query = 'INSERT INTO pb_children(family_id, first_name) VALUES(:famID, :fName)';
+                        
+	                $statement = $db->prepare($query);
+              
+                    // Now we bind the values to the placeholders. 
+	                $statement->bindValue(':famID', $famID);
+                    $statement->bindValue(':fName', $displayname);
+    
+	                $statement->execute();
+ 
+                }
+            }
+            else{
+                $adult = true;
+            }
+        }
+    }  
+
+    ?>
+    
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <h4>Please enter login information: </h4>
+        <label for="addUsername" class="label">Username: </label> 
+        <input type="text" name="addUsername" id="textAddUsername" value="<?php echo $username;?>" class="input5"><br><br>
+        <label for="addPassword" class="label">Password: </label>
+        <input type="password" name="addPassword" id="textAddPassword" value="<?php echo $password;?>" class="input4"><br><br>
+        <label for="addPassword2" class="label">Retype password: </label>
+        <input type="password" name="addPassword2" id="textAddPassword2" value="<?php echo $password2;?>" class="input"><br><br>
+        <label for="addDisplayName" class="label">Given name: </label>
+        <input type="text" name="addDisplayName" id="textAddDisplayName" value="<?php echo $displayname;?>" class="input6"><br><br>
+        <label for="addSurname" class="label">family username - The account will be grouped under this name: </label>
+        <input type="text" name="addSurname" id="textAddSurname" value="<?php echo $surname;?>" class="input"><br><br>
+        <label for="childBox" class="label">Child</label>
+        <input type="checkbox" name="childBox" id="childBox" value="<?php if(isset($_POST["childBox"])) echo 'checked';?>"><br><br>
+        
+        <input type="submit" class="btnLink4" id="AddUserSubmit" value="Create User">
+    </form>
+    
 <?php
     
-    
-    if(isset($_POST["childFN"])){
-        $firstName = htmlspecialchars($_POST["childFN"]);
-    }
-    if(isset($_POST["childLN"])){
-        $lastName = htmlspecialchars($_POST["childLN"]);
-    }
-    if(isset($_POST["childAge"])){
-        $age = htmlspecialchars($_POST["childAge"]);
-    }
-    if(isset($_POST["childNotes"])){
-        $notes = htmlspecialchars($_POST["childNotes"]);
-    }
-/*    
-    try
-{
-	// Add the Scripture
+    //if everything checks out and test is still true, 
+    //enter new user into db.
+    if($test){
+        try
+        {
+            
+           // Preparing the query to enter the account into the user db
+	       $query = 'INSERT INTO pb_user(password, username, displayname, adult, familyid) VALUES(:password, :username, :displayname, :adult, :familyid)';
+	       $statement = $db->prepare($query);
 
-	// We do this by preparing the query with placeholder values
-	$query3 = 'INSERT INTO pb_children (family_id, first_name, last_name, age, notes) VALUES(:family_id, :first_name, :last_name, :age, :notes)';
-	$statement3 = $db->prepare($query3);
+	       // Now we bind the values to the placeholders. This does some nice things
+	       // including sanitizing the input with regard to sql commands.
+	       $statement->bindValue(':password', $passwordHash);
+	       $statement->bindValue(':username', $username);
+	       $statement->bindValue(':displayname', $displayname);
+           $statement->bindValue(':adult', $adult);
+           $statement->bindValue(':familyid', $famID);
+            
 
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
-	$statement3->bindValue(':family_id', $idFamily);
-    $statement3->bindValue(':first_name', $firstName);
-	$statement3->bindValue(':last_name', $lastName);
-	$statement3->bindValue(':age', $age);
-    $statement3->bindValue(':notes', $notes);
-
-	$statement3->execute();
+	       $statement->execute();
+            
+        }
+            catch (Exception $ex)
+           {
+	           // Please be aware that you don't want to output the Exception message in
+	           // a production environment
+	           echo "Error with DB. Details: $ex";
+	           die();
+           }
         
-    $query4 = 'SELECT first_name, last_name FROM pb_children WHERE family_id = :family_id';
-	$statement4 = $db->prepare($query4);
-  
-    $statement4->bindValue(':family_id', $idFamily);
-        
-    $statement4->execute();
-    
-    while ($row4 = $statement4->fetch(PDO::FETCH_ASSOC))
-    {
-        $firstName = $row4['first_name'];
-      
-    }   
-}
-catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}*/
+        echo "<h5>Your account has been successfully created.</h5>";
+        echo "<a href='piggyBankAppWelcome.php'><p2>Return to login page.</p2></a>";
+    }
    
 ?>
-
     
 </body>
 </html>
