@@ -1,0 +1,246 @@
+body {
+    background-color: blanchedalmond;
+}
+
+.div1 {
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: Helvetica, Arial;
+    font-size: 60pt;
+}
+
+        
+.div2 {
+    margin-top: 100px;
+    margin-left: 125px;
+}
+
+.div3 {
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+    
+    font-family: Helvetica, Arial;
+    font-size: 30pt;
+}
+
+.div4 {
+    font-family: Helvetica, Arial;
+    text-align: center;
+    padding-top: 50pt;
+}
+
+.div5 {
+    float: right;
+    flex-wrap: wrap;
+}
+
+.div7 {
+    text-align: center;
+}
+
+.div8 {
+    display: inline-block;
+}
+
+p1 {
+    color: red;
+    }
+
+p2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+
+
+.p2 {
+    font-family: Helvetica, Arial;
+    font-size: 30pt;
+}
+
+.p3 {
+    font-family: Helvetica, Arial;
+    font-size: 20pt;
+}
+
+.p4 {
+    font-family: Helvetica, Arial;
+    font-size: 25pt;
+}
+
+#btn1 {
+    padding: 15pt;
+    margin: 10pt;
+    color: chocolate;
+    background-color: chocolate;
+    font-size: 20pt; 
+    flex-wrap: wrap;
+}
+
+.btnLink2 {
+    font-family: helvetica, arial; 
+    font-size: 20pt;
+    background-color: chocolate;
+    color: white;
+    float: right;
+    padding-right: 10pt;
+    padding-left: 10pt;           
+}
+
+ .btnLink4 {
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    width: 120pt; 
+          
+}
+
+.btnLink3 {
+    font-family: helvetica, arial; 
+    font-size: 30pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    width: 100pt; 
+    margin-left: 380pt;
+          
+}
+
+.btnLink5 {
+            
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    padding-right: 10pt;
+    padding-left: 10pt;
+    margin-left: 329pt;
+}
+
+.btnLink6 {
+            
+    font-family: helvetica, arial; 
+    font-size: 18pt;
+    background-color: burlywood;
+    color: white;
+    float: center;
+    padding-right: 10pt;
+    padding-left: 10pt;
+    margin-left: 160pt;
+}
+
+.imgLogo {
+    border-radius: 50%;
+    width: 125px;
+    height: auto;
+}
+
+.hLogo {
+    font-family: fantasy, cursive;
+    font-size: 200pt;
+   }
+
+h2 {
+    font-family: fantasy, cursive;
+    font-size: 50pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;    
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;    
+    }
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;   
+    margin-bottom: 10pt;
+}
+        
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+
+.input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+}
+        
+.input1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 111pt;
+}
+        
+.input2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 360pt;
+}
+
+.input3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    margin-left: 3pt;
+}
+
+.input4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 211pt;
+}
+           
+.input5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 208pt;
+}
+           
+.input6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt; 
+    width: 196pt;
+}
+
+.column {
+    float: left;
+   
+    padding: 5px;
+}
+        
+.column2 {
+    float: right;
+    
+    padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.p3 {
+    font-family: fantasy, cursive;
+    font-size: 100pt;
+    float: right;
+    }
+
+.errorMsg {
+    visibility: collapse;
+}
